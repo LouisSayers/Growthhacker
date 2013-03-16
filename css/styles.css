@@ -284,7 +284,6 @@ a:focus {
 
 /* My Background */
 #background {
-    display: block;
 	width: 900px;
 	height: 700px;
 	background: white;

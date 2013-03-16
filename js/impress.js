@@ -355,6 +355,7 @@
                 el.id = "step-" + (idx + 1);
             }
 						
+						el.runEffectOnLoad = (data.runEffectOnLoad === 'true');
 						el.effects = $$('.effect', el);
 						el.currentEffect = -1;
 						
@@ -615,14 +616,18 @@
         
         // `next` API function goes to next step (in document order)
         var next = function () {
-            var next;
+            var next, runEffectOnLoad;
 						
 						if(activeStep.hasMoreEffects()) {
 						  activeStep.triggerNextEffect();
 							return activeStep;
-						} else {						
+						} else {				
 							next = steps.indexOf( activeStep ) + 1;
 							next = next < steps.length ? steps[ next ] : steps[ 0 ];
+							runEffectOnLoad = next.runEffectOnLoad;
+						  if(runEffectOnLoad) {
+							  impressEffects.play(next, "custom");
+							}
 							return goto(next);
 						}
         };

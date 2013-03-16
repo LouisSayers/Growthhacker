@@ -15,3 +15,11 @@
 #growth_hacking {
   opacity: 0;
 }
+
+#growth_hacking  h1{
+  font-size: 100px;
+}
+
+.background {
+  display: none;
+}
