@@ -13,6 +13,7 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
 
     <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/growth_hacker.css" rel="stylesheet" />
     
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
@@ -48,26 +49,26 @@
 	  <p>By Louis Sayers</p>
 	</div>
 	
-	<div id="background" class="step" data-x="800" data-y="800" data-z="-10000" data-scale="4" data-rotate="-90">
+	<div id="background" class="step background" data-x="800" data-y="800" data-z="-10000" data-scale="4" data-rotate="-90">
 	  <h1>My Background</h1>
 	  <img src="img/nz.PNG" style="margin-top:80px;width:800px;" />
 	</div>
 
-	<div id="computer_science" class="step" data-x="800" data-y="-4000" data-z="-10000" data-scale="4" data-rotate="-90" 
+	<div id="computer_science" class="step background" data-x="800" data-y="-4000" data-z="-10000" data-scale="4" data-rotate="-90" 
 	style="width:900px;height:800px">
 	  <h1 style="margin-top:200px">Computer Science</h1>
 	  <div style="margin-left:50px;">
-		  <img src="img/imagine_cup2.jpg" style="float:left;padding-top:40px;margin-right:50px;" />
-		  <img src="img/Taxibus Logo.png" width="200px" style="float:left;" />
+		  <img class="effect" data-effect-type="mediumShow" src="img/imagine_cup2.jpg" style="float:left;padding-top:40px;margin-right:50px;" />
+		  <img class="effect" data-effect-type="mediumShow" src="img/Taxibus Logo.png" width="200px" style="float:left;" />
 	  </div>
 	</div>
 	
-	<div id="paris" class="step" data-x="800" data-y="-9000" data-z="-10000" data-scale="4" data-rotate="-90" 
+	<div id="paris" class="step background" data-x="800" data-y="-9000" data-z="-10000" data-scale="4" data-rotate="-90" 
 	style="width:900px;height:800px">
 	  <img src="img/paris.jpg" width="800px" />
 	</div>
 
-	<div id="mem" class="step" data-x="800" data-y="-14000" data-z="-10000" data-scale="4" data-rotate="-90" 
+	<div id="mem" class="step background" data-x="800" data-y="-14000" data-z="-10000" data-scale="4" data-rotate="-90" 
 	style="width:900px;height:800px">
 	  <h1 style="margin-top:200px">Engineering Management</h1>
 	  <div style="margin-left:50px;padding-top:20px;">
@@ -76,10 +77,38 @@
 		  </a>
 	  </div>
 	</div>
-	
-	<div id="nz_to_uk" class="step" data-x="800" data-y="-9000" data-z="-5000" data-scale="8" data-rotate="-90" 
+
+	<div id="entre" class="step background" data-x="800" data-y="-19000" data-z="-10000" data-scale="4" data-rotate="-90" 
 	style="width:900px;height:800px">
+	  <img src="img/entre.jpg" width="800px" />
+	</div>
+	
+	<div id="nz_to_uk" class="step background" data-x="800" data-y="-19000" data-z="-5000" data-scale="6" data-rotate="-90" 
+	style="">
 	  <img src="img/nz_to_uk.jpg" width="800px" />
+	</div>
+	
+	<div id="thoughtworks" class="step background" data-x="800" data-y="-26000" data-z="-5000" data-scale="6" data-rotate="-90" 
+	style="">
+	  <img src="img/thoughtworks.png" width="800px" />
+	</div>
+	
+	<div id="forward_labs" class="step background" data-x="800" data-y="-33000" data-z="-5000" data-scale="6" data-rotate="-90" 
+	style="">
+	  <img src="img/labs.png" />
+	  <div id="labs_companies">
+		  <img class="effect" data-effect-type="mediumShow" src="img/makers.png" />
+		  <img class="effect" data-effect-type="mediumShow" src="img/dropwines.png" />
+		  <img class="effect" data-effect-type="mediumShow" src="img/appearhere.png" />
+		  <img class="effect" data-effect-type="mediumShow" src="img/stealth.jpg" />
+	  </div>
+		<div class="effect" data-effect-type="custom" data-effect="transitionToGrowthHacking"></div>		
+	</div>
+	
+	
+	<div id="growth_hacking" class="step" data-x="800" data-y="-33000" data-z="-5000" data-scale="6" data-rotate="-90">
+		  <h1>Growth Hacking</h1>
+			<p>What is it?</p>
 	</div>
 	
     <!--
@@ -249,6 +278,70 @@
 
 <script src="js/impress.js"></script>
 <script>impress().init();</script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+<script>
+  var pfx = (function () {
+       
+       var style = document.createElement('dummy').style,
+           prefixes = 'Webkit Moz O ms Khtml'.split(' '),
+           memory = {};
+       
+       return function ( prop ) {
+           if ( typeof memory[ prop ] === "undefined" ) {
+               
+               var ucProp  = prop.charAt(0).toUpperCase() + prop.substr(1),
+                   props   = (prop + ' ' + prefixes.join(ucProp + ' ') + ucProp).split(' ');
+               
+               memory[ prop ] = null;
+               for ( var i in props ) {
+                   if ( style[ props[i] ] !== undefined ) {
+                       memory[ prop ] = props[i];
+                       break;
+                   }
+               }
+           
+           }
+           
+           return memory[ prop ];
+       };
+	})();
+	
+	// `css` function applies the styles given in `props` object to the element
+  // given as `el`. It runs all property names through `pfx` function to make
+  // sure proper prefixed version of the property is used.
+  var css = function ( el, props ) {
+      var key, pkey;
+      for ( key in props ) {
+          if ( props.hasOwnProperty(key) ) {
+              pkey = pfx(key);
+              if ( pkey !== null ) {
+                  el.style[pkey] = props[key];
+              }
+          }
+      }
+      return el;
+  }
+	
+	var arrayify = function ( a ) {
+      return [].slice.call( a );
+  };
+	
+  var slowHide = function (el) {
+	  css(el, {
+			transition: 'opacity 1s',
+			'-moz-transition': 'opacity 1s',
+			'-webkit-transition': 'opacity 1s',
+			'-o-transition': 'opacity 1s',
+			opacity: 0
+		});
+	};
+	
+	impressEffects.addCustom("transitionToGrowthHacking", function () {
+		var backgroundElements = document.querySelectorAll('.background')
+		arrayify(backgroundElements).forEach(slowHide);
+	});
+</script>
 
 <!--
     

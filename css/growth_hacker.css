@@ -1,0 +1,17 @@
+#labs_companies {
+  margin-left: 200px;
+}
+
+#labs_companies img{
+  padding-top: 20px;
+  float: left;
+  clear: left;
+}
+
+.effect[data-effect-type=mediumShow] {
+  display: none;
+}
+
+#growth_hacking {
+  opacity: 0;
+}

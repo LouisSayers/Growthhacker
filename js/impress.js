@@ -210,6 +210,45 @@
     
     // it's just an empty function ... and a useless comment.
     var empty = function () { return false; };
+		
+		
+		//Effects e.g. transitions, animations on elements etc
+		var impressEffects = window.impressEffects = (function () {
+		  var customEffects = {};
+		
+			return {
+				play: function (el, effectType) {
+				  var effect;
+					if (effectType === 'mediumShow') {
+					  css(el, {
+                display: 'block'
+            });
+					} else if(effectType === 'hide') {
+					  console.log("hide");
+					  css(el, {
+                transition: "all 0s ease-in-out",
+								opacity: "0",
+								display: none
+            });
+					} else if(effectType === 'custom') {
+					  effect = el.dataset.effect;
+					  if(customEffects.hasOwnProperty(effect)) {
+						  customEffects[effect]();
+						} else {
+							console.log("don't know what the effect '" + effect + "' is. \
+							            Have you added it i.e. impressEffects.addCustom(effectName, effectFunc)");
+						}
+					} else {
+					  console.log("don't know what the effect '" + effectType + "' is...");
+					}
+				},
+
+				addCustom: function (effectName, effect) {
+					customEffects[effectName] = effect;
+				}
+			};
+			
+		}());
     
     // IMPRESS.JS API
     
@@ -315,6 +354,23 @@
             if ( !el.id ) {
                 el.id = "step-" + (idx + 1);
             }
+						
+						el.effects = $$('.effect', el);
+						el.currentEffect = -1;
+						
+						el.hasMoreEffects = function () {
+							return this.effects.length > this.currentEffect + 1;
+						};
+						
+						el.triggerNextEffect = function () {
+						  var effectData, effectType, effectElement;
+							this.currentEffect = this.currentEffect + 1;
+						  effectElement = this.effects[this.currentEffect];
+							effectData = effectElement.dataset;
+							effectType = effectData.effectType;
+							
+							impressEffects.play(effectElement, effectType);							
+						};
             
             stepsData["impress-" + el.id] = step;
             
@@ -550,18 +606,25 @@
         
         // `prev` API function goes to previous step (in document order)
         var prev = function () {
-            var prev = steps.indexOf( activeStep ) - 1;
-            prev = prev >= 0 ? steps[ prev ] : steps[ steps.length-1 ];
-            
-            return goto(prev);
+            var prev;
+					
+						prev = steps.indexOf( activeStep ) - 1;
+						prev = prev >= 0 ? steps[ prev ] : steps[ steps.length-1 ];
+						return goto(prev);			
         };
         
         // `next` API function goes to next step (in document order)
         var next = function () {
-            var next = steps.indexOf( activeStep ) + 1;
-            next = next < steps.length ? steps[ next ] : steps[ 0 ];
-            
-            return goto(next);
+            var next;
+						
+						if(activeStep.hasMoreEffects()) {
+						  activeStep.triggerNextEffect();
+							return activeStep;
+						} else {						
+							next = steps.indexOf( activeStep ) + 1;
+							next = next < steps.length ? steps[ next ] : steps[ 0 ];
+							return goto(next);
+						}
         };
         
         // Adding some useful classes to step elements.
