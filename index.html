@@ -88,7 +88,7 @@
 	style="">
 	  <img src="img/nz_to_uk.jpg" width="800px" />
 	</div>
-	
+		
 	<div id="thoughtworks" class="step background" data-x="800" data-y="-26000" data-z="-5000" data-scale="6" data-rotate="-90" 
 	style="">
 	  <img src="img/thoughtworks.png" width="800px" />
@@ -107,12 +107,96 @@
 	</div>
 	
 	
-	<div id="growth_hacking" class="step" data-x="800" data-y="-33000" data-z="-5000" data-scale="6" 
+	<div id="growth_hacking" class="step growth_hacking" data-x="800" data-y="-33000" data-z="-5000" data-scale="6" 
 			 data-rotate="-90" data-run-effect-on-load="true" data-effect="show_growth_hacking">
 		<h1>Growth Hacking</h1>
-		<p style="float:left">What is it?</p>
+		<p style="float:left;margin-left:91px;">What is it?</p>
 		<p style="float:left; padding-left:20px;" class="effect" data-effect-type="mediumShow">It's Marketing</p>
 	</div>
+	
+	
+	<div id="growth_hacking_continued" class="step growth_hacking" data-x="800" data-y="-33000" data-z="-4000" data-scale="6" 
+			 data-rotate="-90" data-run-effect-on-load="true" data-effect="show_growth_hacking_continued">
+		<p style="margin-top: 200px;margin-left: 225px;font-size:40px;">Well... part of it</p>
+	</div>
+	
+	<div id="marketing" class="step" data-x="4500" data-y="-33000" data-z="6000" data-scale="10" 
+			 data-rotate="-90" data-run-effect-on-load="true" data-effect="show_all_growth_hacking">
+		<h1>Marketing</h1>
+	
+		<div id="marketing_paid" class="marketing_segment">
+			<h2>Paid</h2>
+			<ul>
+				<li>Search Engine Marketing (SEM)</li>
+				<li>Facebook</li>
+				<li>Twitter</li>
+				<li>Banner ads</li>
+				<li>Traditional ads</li>
+			</ul>
+		</div>
+
+		<div id="marketing_lead" class="marketing_segment">
+			<h2>Lead Generation</h2>
+			<ul>
+				<li>Courses</li>
+				<li>Webinars</li>
+				<li>Q&A sites</li>
+			</ul>
+		</div>
+		
+		<div id="marketing_content" class="marketing_segment">
+			<h2>Content Marketing</h2>
+			<ul>
+				<li>Company Blog</li>
+				<li>Guest posting</li>
+				<li>Podcasts</li>
+				<li>Ebooks</li>
+			</ul>
+			</div>
+		
+		<div id="marketing_directories" class="marketing_segment">
+			<h2>Directories</h2>
+			<ul>
+				<li>Bookmarking sites</li>
+				<li>Information Hubs</li>
+			</ul>
+			</div>
+		
+		<div id="marketing_social" class="marketing_segment">
+			<h2>Social Media</h2>
+			<ul>
+				<li>Organic interaction</li>
+				<li>Competitions</li>
+			</ul>
+			</div>		
+		
+		<div id="marketing_pr" class="marketing_segment">
+			<h2>PR</h2>
+			<ul>
+				<li>Newspapers</li>
+				<li>Radio</li>
+				<li>TV</li>
+				<li>Partners</li>
+			</ul>
+			</div>
+		
+		<div id="marketing_emails" class="marketing_segment">
+			<h2>Emails</h2>
+		</div>
+		
+		<div id="marketing_seo" class="marketing_segment">
+			<h2>SEO</h2>
+		</div>
+		<div id="marketing_meetups" class="marketing_segment">
+			<h2>Meetup Groups</h2>
+			<ul>
+				<li>Networking</li>
+				<li>Talks</li>
+				<li>Sponsorship</li>
+			</ul>
+		</div>
+	</div>
+	
 	
     <!--
         
@@ -342,10 +426,18 @@
 	
   var slowShow = function (el) {
 	  css(el, {
+			opacity: 0,
+			display: 'block',
 			transition: 'opacity 1s',
 			'-moz-transition': 'opacity 1s',
 			'-webkit-transition': 'opacity 1s',
 			'-o-transition': 'opacity 1s',
+			opacity: 1
+		});
+	};	
+
+  var show = function (el) {
+	  css(el, {
 			display: 'block',
 			opacity: 1
 		});
@@ -358,13 +450,22 @@
 	
 	impressEffects.addCustom("show_background", function () {
 		var backgroundElements = document.querySelectorAll('.background');
-		console.log("showing background");
 		arrayify(backgroundElements).forEach(slowShow);
 	});	
 	
 	impressEffects.addCustom("show_growth_hacking", function () {
 		var slide = document.getElementById('growth_hacking');
 		slowShow(slide);
+	});
+	
+	impressEffects.addCustom("show_growth_hacking_continued", function () {
+		var slide = document.getElementById('growth_hacking_continued');
+		slowShow(slide);
+	});
+	
+	impressEffects.addCustom("show_all_growth_hacking", function () {
+		var backgroundElements = document.querySelectorAll('.growth_hacking');
+		arrayify(backgroundElements).forEach(show);
 	});
 </script>
 

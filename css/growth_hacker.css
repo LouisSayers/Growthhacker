@@ -23,3 +23,50 @@
 .background {
   display: none;
 }
+
+.growth_hacking {
+  display: none;
+}
+
+#marketing {
+ 
+}
+
+#marketing h1 {
+  margin-top:200px;
+	margin-left:200px;
+	font-size:80px;
+	position:absolute;
+}
+
+#marketing .marketing_segment {
+  position: absolute;
+}
+
+
+#marketing .marketing_segment  h2 { 
+	font-size: 20px;
+	padding-bottom: 5px;
+}
+
+#marketing .marketing_segment  ul li{ 
+	font-size: 12px;
+	line-height: 1.2em;
+	padding-left:10px;
+}
+
+#marketing_paid               {margin-top: 30px; margin-left: 50px;}
+#marketing_lead               {margin-top: 180px; margin-left: 20px;}
+#marketing_directories  {margin-top: 300px; margin-left: 50px;}
+#marketing_content         {margin-top: 380px; margin-left: 150px;}
+#marketing_social      {margin-top: 400px; margin-left: 400px;}
+#marketing_pr          {margin-top: 30px; margin-left: 580px;}
+#marketing_emails      {margin-top: 150px; margin-left: 630px;}
+#marketing_seo         {margin-top: 230px; margin-left: 650px;}
+#marketing_meetups         {margin-top: 350px; margin-left: 580px;}
+
+
+
+
+
+
