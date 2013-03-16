@@ -55,15 +55,15 @@
 	padding-left:10px;
 }
 
-#marketing_paid               {margin-top: 30px; margin-left: 50px;}
-#marketing_lead               {margin-top: 180px; margin-left: 20px;}
-#marketing_directories  {margin-top: 300px; margin-left: 50px;}
-#marketing_content         {margin-top: 380px; margin-left: 150px;}
-#marketing_social      {margin-top: 400px; margin-left: 400px;}
-#marketing_pr          {margin-top: 30px; margin-left: 580px;}
-#marketing_emails      {margin-top: 150px; margin-left: 630px;}
-#marketing_seo         {margin-top: 230px; margin-left: 650px;}
-#marketing_meetups         {margin-top: 350px; margin-left: 580px;}
+#marketing_pr               {margin-top: 55px; margin-left:110px;} #marketing_paid          {margin-top: 55px; margin-left: 550px;}
+#marketing_seo               {margin-top: 190px; margin-left: 50px;} #marketing_emails      {margin-top: 190px; margin-left: 630px;}
+#marketing_directories  {margin-top: 260px; margin-left: 40px;} #marketing_lead  {margin-top: 260px; margin-left: 650px;}
+#marketing_content         {margin-top: 380px; margin-left: 110px;}  #marketing_meetups         {margin-top: 380px; margin-left: 550px;}
+#marketing_social      {margin-top: 400px; margin-left: 350px;}
+
+
+
+
 
 
 
