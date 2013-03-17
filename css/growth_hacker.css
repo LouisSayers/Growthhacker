@@ -101,7 +101,7 @@
 
 #gh_disengaged {
   position:absolute;
-  margin-left: 700px;
+  margin-left: 650px;
 	margin-top: 168px;
 }
 
@@ -109,6 +109,18 @@
   padding: 15px;
 	background: white;
 	border-radius: 15px;
+}
+
+.example h2 {
+  font-size: 40px;
+}
+
+ul li {
+  margin-bottom: 20px;
+}
+
+ul.with-bullets {
+ list-style: square;
 }
 
 

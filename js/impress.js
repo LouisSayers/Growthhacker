@@ -218,13 +218,16 @@
 		
 			return {
 				play: function (el, effectType) {
-				  var effect;
+				  var effect, displayType;
 					if (effectType === 'mediumShow') {
+					  displayType = 'block';
+					  if(el.nodeName === 'LI') {
+							displayType = 'list-item';
+						}
 					  css(el, {
-                display: 'block'
+                display: displayType
             });
 					} else if(effectType === 'hide') {
-					  console.log("hide");
 					  css(el, {
                 transition: "all 0s ease-in-out",
 								opacity: "0",
