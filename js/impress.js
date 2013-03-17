@@ -220,10 +220,17 @@
 				play: function (el, effectType) {
 				  var effect, displayType;
 					if (effectType === 'mediumShow') {
-					  displayType = 'block';
-					  if(el.nodeName === 'LI') {
-							displayType = 'list-item';
+					  switch(el.nodeName) {
+						  case 'LI':
+								displayType = 'list-item';
+							  break;
+						  case 'SPAN':
+							  displayType = 'inline';
+							  break;
+							default:
+							  displayType = 'block';
 						}
+						
 					  css(el, {
                 display: displayType
             });
