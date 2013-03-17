@@ -61,9 +61,55 @@
 #marketing_content         {margin-top: 380px; margin-left: 110px;}  #marketing_meetups         {margin-top: 380px; margin-left: 550px;}
 #marketing_social      {margin-top: 400px; margin-left: 350px;}
 
+.state-diagram {
+  position: absolute;
+}
 
+#growth_hacking_explain #gh_explain_unaware_to_aware {
+  margin-top: 50px;
+	margin-left: 55px;
+	width: 550px;
+}
 
+#growth_hacking_explain #gh_explain_unaware_to_aware div {
+	float: left;
+}
 
+#gh_explain_unaware_to_aware_arrows {
+	padding: 15px 20px;
+}
+
+#gh_aware_to_engaged {
+  width: 200px;
+	margin-left: 404px;
+	margin-top: 190px;
+}
+
+#gh_explain_aware_to_disengaged_arrows {
+  width: 110px;
+	margin-left: 41px;
+	transform:rotate(90deg);
+	-ms-transform:rotate(90deg); /* IE 9 */
+	-moz-transform:rotate(90deg); /* Firefox */
+	-webkit-transform:rotate(90deg); /* Safari and Chrome */
+	-o-transform:rotate(90deg); /* Opera */
+}
+
+#gh_engaged {
+  margin-top: 50px;
+}
+
+#gh_disengaged {
+  position:absolute;
+  margin-left: 700px;
+	margin-top: 168px;
+}
+
+.user_state {
+  padding: 15px;
+	background: white;
+	border-radius: 15px;
+}
 
 
 
