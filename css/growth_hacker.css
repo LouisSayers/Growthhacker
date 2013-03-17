@@ -116,6 +116,19 @@
   font-size: 40px;
 }
 
+.example p {
+  font-size: 25px;
+	padding: 20px;
+}
+
+.example ul {
+	margin-left: 50px;
+}
+
+.example  li{
+	font-size: 30px;
+}
+
 ul li {
   margin-bottom: 20px;
 }
