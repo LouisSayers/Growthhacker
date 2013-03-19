@@ -145,6 +145,29 @@ ul.with-bullets {
 }
 
 
+blockquote {
+	margin: 1.5em 0 1.5em 0em;
+	padding: .75em .5em .75em 1em;
+	background: #fff;
+	-webkit-box-shadow: 0 0 6px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 0 6px rgba(0,0,0,0.5);
+	box-shadow: 0 0 6px rgba(0,0,0,0.5);
+	border-left: 0.5em solid #DDD;
+	font-size: 30px;
+	line-height: 1.5;
+	width: 650px;
+}
+
+
+blockquote:before {
+	display: block;
+	height: 0;
+	content: "“";
+	margin-left: -.95em;
+	font: italic 400%/1 Cochin,Georgia,"Times New Roman", serif;
+	color: #999;
+}
+
 
 
 
