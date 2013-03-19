@@ -56,6 +56,10 @@
 	margin-bottom: 0px;
 }
 
+#summary ul li{
+  line-height: 0.9em;
+}
+
 #marketing_pr               {margin-top: 55px; margin-left:110px;} #marketing_paid          {margin-top: 55px; margin-left: 550px;}
 #marketing_seo               {margin-top: 190px; margin-left: 50px;} #marketing_emails      {margin-top: 190px; margin-left: 630px;}
 #marketing_directories  {margin-top: 260px; margin-left: 40px;} #marketing_lead  {margin-top: 260px; margin-left: 650px;}
