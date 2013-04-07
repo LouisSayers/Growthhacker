@@ -250,7 +250,7 @@ i, em { font-style: italic }
 }
 
 #title h1 {
-    font-size: 140px;
+    font-size: 120px;
 
     -webkit-transform: translateZ(50px);
     -moz-transform:    translateZ(50px);
